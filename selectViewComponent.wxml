@@ -1,0 +1,20 @@
+<!--templates/selectViewComponent.wxml-->
+<view class='containerView'>
+  <view class='section' wx:for='{{titles}}' wx:key="{{item}}">
+    <view class='sectionTitle' wx:if='{{!item.notShowName}}'>{{item.name}}</view>
+    <view class='sectionLabel'>
+      <view wx:for='{{item.value}}' wx:for-item="label" wx:key="{{label}}">
+        <view wx:if="{{selectData[item.name][label]}}" class='label_select' style='min-width:{{labelWidth}}px' data-label='{{item.name+"_"+label}}' catchtap='clickLabel'>{{label}}</view>
+        <view class='label' style='min-width:{{labelWidth}}px' wx:else data-label='{{item.name+"_"+label}}' catchtap='clickLabel'>{{label}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='bottomView'>
+   <view class='reset' catchtap='resetAction' wx:if='{{isHaveReset}}'>重置</view>  
+  <view class='confirm' catchtap='confirmAction' wx:if='{{isHaveConfirm}}' style='{{isHaveReset?"width:calc(100%/2.0)":"width:100%"}}'>确定</view>
+ 
+  </view>
+  
+
+</view>
