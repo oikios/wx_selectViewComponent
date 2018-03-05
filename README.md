@@ -18,4 +18,5 @@
       
 selectData的数据格式：'select.selectData':{'职位':{'全部':'全部'},'城市':{'全部':'全部'},'时间':{'全部':'全部'},'发布来源':{'全部':'全部'}}，
 也就是{'标题':'item':'item'}的形式
-      
+
+citys/recommend/types 的数据格式为：{'name':'城市','value':[],'notShowName':true}  //notShowName判断是否显示组标题，默认false，不显示
