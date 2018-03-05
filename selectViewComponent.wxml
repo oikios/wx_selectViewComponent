@@ -1,5 +1,5 @@
 <!--templates/selectViewComponent.wxml-->
-<view class='containerView'>
+<view class='containerView' style = '{{isConfirmFixed?"padding-bottom:56.5px":((isHaveConfirm || isHaveReset)?"padding-bottom:0px":"padding-bottom:12.5px")}}'>
   <view class='section' wx:for='{{titles}}' wx:key="{{item}}">
     <view class='sectionTitle' wx:if='{{!item.notShowName}}'>{{item.name}}</view>
     <view class='sectionLabel'>
@@ -10,11 +10,8 @@
     </view>
   </view>
 
-  <view class='bottomView'>
-   <view class='reset' catchtap='resetAction' wx:if='{{isHaveReset}}'>重置</view>  
-  <view class='confirm' catchtap='confirmAction' wx:if='{{isHaveConfirm}}' style='{{isHaveReset?"width:calc(100%/2.0)":"width:100%"}}'>确定</view>
- 
+  <view wx:if='{{isHaveConfirm || isHaveReset}}' class='{{isConfirmFixed?"bottomView_fixed":"bottomView"}}' style='{{isConfirmFixed?"margin-top:0px":"margin-top:12.5px"}}'>
+    <view class='reset' catchtap='resetAction' wx:if='{{isHaveReset}}'>重置</view>
+    <view class='confirm' catchtap='confirmAction' wx:if='{{isHaveConfirm}}' style='{{isHaveReset?"width:calc(100%/2.0)":"width:100%"}}'>确定</view>
   </view>
-  
-
 </view>

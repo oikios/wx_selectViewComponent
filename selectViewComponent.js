@@ -23,6 +23,10 @@ Component({
       numberPerRow:{
         type:Number,
         value:4,  //默认是4
+      },
+      isConfirmFixed:{
+        type:Boolean,
+        value:false
       }
   },
 
