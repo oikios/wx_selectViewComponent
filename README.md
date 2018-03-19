@@ -1,5 +1,5 @@
 # wx_selectViewComponent
-微信下拉选项组件
+小程序下拉选项组件
 使用方式：
 针对不同的下拉菜单，调用：
 <selectViewComponent titles="{{select.types}}" selectData="{{select.selectData}}" bind:clickLabel='clickLabel' wx:if="{{select.selectTitle=='职位'}}"></selectViewComponent>
